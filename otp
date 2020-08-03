@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+public class main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the length of OTP; ");
+        int len = sc.nextInt();
+        String Capital_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+        String Small_char = "abcdefghijklmnopqrstuvwxyz"; 
+        String numb = "0123456789"; 
+        String symb = "!@#$%^&*_=+-/.?<>)"; 
+        String values = Capital_char + Small_char + 
+                        numb + symb;
+        Random rand = new Random(); 
+        char OTP[] = new char[len];
+        for (int i = 0; i < len; i++) {
+            OTP[i] =  values.charAt(rand.nextInt(values.length()));
+        }
+        System.out.print("Your OTP: ");
+        System.out.println(OTP);
+    }
+}
